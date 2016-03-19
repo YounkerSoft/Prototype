@@ -10,8 +10,8 @@ public class GoodsOrder extends Order{
 	private long goodsId;
 	
 	private String spu;				//SPU是商品编码 SKU是商品下的一个分类属性
-	private String[] sku[];			//商品的具体分类颜色，尺寸等
-	private int[] counts[];			//每个sku对应的订单数量
+	private String[] sku;			//商品的具体分类颜色，尺寸等
+	private int[] counts;			//每个sku对应的订单数量
 	private int totalCounts;		//当前订单总的数量
 	
 	private int status;				//订单状态：0：未生产； 1：生产中； 2：生产完成； 3：不可生产
@@ -31,7 +31,7 @@ public class GoodsOrder extends Order{
 	 * @param counts
 	 * @param totalCounts
 	 */
-	public GoodsOrder(long goodsId, String spu, String[][] sku, int[][] counts,
+	public GoodsOrder(long goodsId, String spu, String[] sku, int[] counts,
 			int totalCounts) {
 		super();
 		this.goodsId = goodsId;
@@ -53,7 +53,7 @@ public class GoodsOrder extends Order{
 	 * @param orderTime
 	 * @param deadLine
 	 */
-	public GoodsOrder(long goodsId, String spu, String[][] sku, int[][] counts,
+	public GoodsOrder(long goodsId, String spu, String[] sku, int[] counts,
 			int totalCounts, int status, int orderTime, int deadLine) {
 		super();
 		this.goodsId = goodsId;
@@ -94,7 +94,7 @@ public class GoodsOrder extends Order{
 	/**
 	 * @return the sku
 	 */
-	public String[][] getSku() {
+	public String[] getSku() {
 		return sku;
 	}
 
@@ -102,7 +102,7 @@ public class GoodsOrder extends Order{
 	/**
 	 * @param sku the sku to set
 	 */
-	public void setSku(String[][] sku) {
+	public void setSku(String[] sku) {
 		this.sku = sku;
 	}
 
@@ -110,7 +110,7 @@ public class GoodsOrder extends Order{
 	/**
 	 * @return the counts
 	 */
-	public int[][] getCounts() {
+	public int[] getCounts() {
 		return counts;
 	}
 
@@ -118,7 +118,7 @@ public class GoodsOrder extends Order{
 	/**
 	 * @param counts the counts to set
 	 */
-	public void setCounts(int[][] counts) {
+	public void setCounts(int[] counts) {
 		this.counts = counts;
 	}
 

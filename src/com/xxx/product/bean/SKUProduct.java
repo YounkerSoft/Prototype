@@ -10,10 +10,10 @@ public class SKUProduct extends Product{
 	private long skuProductId;
 	
 	private String sku;
-	private String[] skuParts[];
-	private String[] materials[];
-	private double[] materialsAmount[];
-	private int[] requiredTime[];
+	private String[] skuParts;
+	private String[] materials;
+	private double[] materialsAmount;
+	private int[] requiredTime;
 	
 	
 	/**
@@ -24,9 +24,9 @@ public class SKUProduct extends Product{
 	 * @param materialsAmount
 	 * @param requiredTime
 	 */
-	public SKUProduct(long skuProductId, String sku, String[][] skuParts,
-			String[][] materials, double[][] materialsAmount,
-			int[][] requiredTime) {
+	public SKUProduct(long skuProductId, String sku, String[] skuParts,
+			String[] materials, double[] materialsAmount,
+			int[] requiredTime) {
 		super();
 		this.skuProductId = skuProductId;
 		this.sku = sku;
@@ -64,7 +64,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the skuParts
 	 */
-	public String[][] getSkuParts() {
+	public String[] getSkuParts() {
 		return skuParts;
 	}
 
@@ -72,7 +72,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param skuParts the skuParts to set
 	 */
-	public void setSkuParts(String[][] skuParts) {
+	public void setSkuParts(String[] skuParts) {
 		this.skuParts = skuParts;
 	}
 
@@ -80,7 +80,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the materials
 	 */
-	public String[][] getMaterials() {
+	public String[] getMaterials() {
 		return materials;
 	}
 
@@ -88,7 +88,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param materials the materials to set
 	 */
-	public void setMaterials(String[][] materials) {
+	public void setMaterials(String[] materials) {
 		this.materials = materials;
 	}
 
@@ -96,7 +96,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the materialsAmount
 	 */
-	public double[][] getMaterialsAmount() {
+	public double[] getMaterialsAmount() {
 		return materialsAmount;
 	}
 
@@ -104,7 +104,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param materialsAmount the materialsAmount to set
 	 */
-	public void setMaterialsAmount(double[][] materialsAmount) {
+	public void setMaterialsAmount(double[] materialsAmount) {
 		this.materialsAmount = materialsAmount;
 	}
 
@@ -112,7 +112,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the requiredTime
 	 */
-	public int[][] getRequiredTime() {
+	public int[] getRequiredTime() {
 		return requiredTime;
 	}
 
@@ -120,7 +120,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param requiredTime the requiredTime to set
 	 */
-	public void setRequiredTime(int[][] requiredTime) {
+	public void setRequiredTime(int[] requiredTime) {
 		this.requiredTime = requiredTime;
 	}
 	
