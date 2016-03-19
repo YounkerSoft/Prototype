@@ -58,6 +58,28 @@ public class SKUOrder extends Order{
 
 
 	/**
+	 * @param skuOrderId
+	 * @param spu
+	 * @param sku
+	 * @param count
+	 * @param status
+	 * @param orderTime
+	 * @param deadLine
+	 */
+	public SKUOrder(long skuOrderId, String spu, String sku, int count,
+			int status, int orderTime, int deadLine) {
+		super();
+		this.skuOrderId = skuOrderId;
+		this.spu = spu;
+		this.sku = sku;
+		this.count = count;
+		this.status = status;
+		this.orderTime = orderTime;
+		this.deadLine = deadLine;
+	}
+
+
+	/**
 	 * @return the skuOrderId
 	 */
 	public long getSkuOrderId() {
