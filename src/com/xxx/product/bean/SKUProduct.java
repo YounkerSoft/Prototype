@@ -1,4 +1,4 @@
-package com.xxx.product;
+package com.xxx.product.bean;
 
 /**
  * @author yuan

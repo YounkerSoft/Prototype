@@ -1,17 +1,18 @@
-package com.xxx.order;
+package com.xxx.order.bean;
 
 /**
  * @author yuan
  *
- * @date 2016年3月18日 下午3:16:43
+ * @date 2016年3月18日 下午3:00:04
  */
-public class SKUOrder extends Order{
+public class GoodsOrder extends Order{
 	
-	private long skuOrderId;
+	private long goodsId;
 	
-	private String spu;
-	private String sku;
-	private int count;
+	private String spu;				//SPU是商品编码 SKU是商品下的一个分类属性
+	private String[] sku[];			//商品的具体分类颜色，尺寸等
+	private int[] counts[];			//每个sku对应的订单数量
+	private int totalCounts;		//当前订单总的数量
 	
 	private int status;				//订单状态：0：未生产； 1：生产中； 2：生产完成； 3：不可生产
 	
@@ -24,44 +25,53 @@ public class SKUOrder extends Order{
 	
 	
 	/**
-	 * @param skuOrderId
+	 * @param goodsId
 	 * @param spu
 	 * @param sku
-	 * @param count
+	 * @param counts
+	 * @param totalCounts
 	 */
-	public SKUOrder(long skuOrderId, String spu, String sku, int count) {
+	public GoodsOrder(long goodsId, String spu, String[][] sku, int[][] counts,
+			int totalCounts) {
 		super();
-		this.skuOrderId = skuOrderId;
+		this.goodsId = goodsId;
 		this.spu = spu;
 		this.sku = sku;
-		this.count = count;
+		this.counts = counts;
+		this.totalCounts = totalCounts;
 		this.status = 0;
 	}
 
 
 	/**
-	 * @param skuOrderId
+	 * @param goodsId
 	 * @param spu
 	 * @param sku
-	 * @param count
+	 * @param counts
+	 * @param totalCounts
 	 * @param status
+	 * @param orderTime
+	 * @param deadLine
 	 */
-	public SKUOrder(long skuOrderId, String spu, String sku, int count,
-			int status) {
+	public GoodsOrder(long goodsId, String spu, String[][] sku, int[][] counts,
+			int totalCounts, int status, int orderTime, int deadLine) {
 		super();
-		this.skuOrderId = skuOrderId;
+		this.goodsId = goodsId;
 		this.spu = spu;
 		this.sku = sku;
-		this.count = count;
+		this.counts = counts;
+		this.totalCounts = totalCounts;
 		this.status = status;
+		this.orderTime = orderTime;
+		this.deadLine = deadLine;
 	}
 
 
 	/**
-	 * @return the skuOrderId
+	 * @return the goodsId
 	 */
-	public long getSkuOrderId() {
-		return skuOrderId;
+	public long getGoodsId() {
+		return goodsId;
 	}
 
 
@@ -84,7 +94,7 @@ public class SKUOrder extends Order{
 	/**
 	 * @return the sku
 	 */
-	public String getSku() {
+	public String[][] getSku() {
 		return sku;
 	}
 
@@ -92,24 +102,40 @@ public class SKUOrder extends Order{
 	/**
 	 * @param sku the sku to set
 	 */
-	public void setSku(String sku) {
+	public void setSku(String[][] sku) {
 		this.sku = sku;
 	}
 
 
 	/**
-	 * @return the count
+	 * @return the counts
 	 */
-	public int getCount() {
-		return count;
+	public int[][] getCounts() {
+		return counts;
 	}
 
 
 	/**
-	 * @param count the count to set
+	 * @param counts the counts to set
 	 */
-	public void setCount(int count) {
-		this.count = count;
+	public void setCounts(int[][] counts) {
+		this.counts = counts;
+	}
+
+
+	/**
+	 * @return the totalCounts
+	 */
+	public int getTotalCounts() {
+		return totalCounts;
+	}
+
+
+	/**
+	 * @param totalCounts the totalCounts to set
+	 */
+	public void setTotalCounts(int totalCounts) {
+		this.totalCounts = totalCounts;
 	}
 
 
@@ -207,9 +233,6 @@ public class SKUOrder extends Order{
 	public void setEndTime(int endTime) {
 		this.endTime = endTime;
 	}
-	
-	
-	
 	
 
 }
