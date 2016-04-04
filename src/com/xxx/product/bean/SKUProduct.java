@@ -11,8 +11,8 @@ public class SKUProduct extends Product{
 	
 	private String sku;
 	private String[] skuParts;
-	private String[] materials;
-	private double[] materialsAmount;
+	private String[][] materials;
+	private double[][] materialsAmount;
 	private int[] requiredTime;
 	
 	
@@ -25,7 +25,7 @@ public class SKUProduct extends Product{
 	 * @param requiredTime
 	 */
 	public SKUProduct(long skuProductId, String sku, String[] skuParts,
-			String[] materials, double[] materialsAmount,
+			String[][] materials, double[][] materialsAmount,
 			int[] requiredTime) {
 		super();
 		this.skuProductId = skuProductId;
@@ -80,7 +80,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the materials
 	 */
-	public String[] getMaterials() {
+	public String[][] getMaterials() {
 		return materials;
 	}
 
@@ -88,7 +88,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param materials the materials to set
 	 */
-	public void setMaterials(String[] materials) {
+	public void setMaterials(String[][] materials) {
 		this.materials = materials;
 	}
 
@@ -96,7 +96,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the materialsAmount
 	 */
-	public double[] getMaterialsAmount() {
+	public double[][] getMaterialsAmount() {
 		return materialsAmount;
 	}
 
@@ -104,7 +104,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param materialsAmount the materialsAmount to set
 	 */
-	public void setMaterialsAmount(double[] materialsAmount) {
+	public void setMaterialsAmount(double[][] materialsAmount) {
 		this.materialsAmount = materialsAmount;
 	}
 
