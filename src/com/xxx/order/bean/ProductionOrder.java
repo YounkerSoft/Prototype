@@ -73,6 +73,31 @@ public class ProductionOrder extends Order{
 		this.count = count;
 		this.status = status;
 		this.material = material;
+	}	
+
+
+	/**
+	 * @param productionOrderId
+	 * @param sku
+	 * @param skuPart
+	 * @param count
+	 * @param status
+	 * @param material
+	 * @param materialAmount
+	 * @param estimatedFinishTime
+	 */
+	public ProductionOrder(long productionOrderId, String sku, String skuPart,
+			int count, int status, String[] material, double[] materialAmount,
+			int estimatedFinishTime) {
+		super();
+		this.productionOrderId = productionOrderId;
+		this.sku = sku;
+		this.skuPart = skuPart;
+		this.count = count;
+		this.status = status;
+		this.material = material;
+		this.materialAmount = materialAmount;
+		this.estimatedFinishTime = estimatedFinishTime;
 	}
 
 
