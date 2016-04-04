@@ -13,7 +13,7 @@ import com.xxx.product.bean.SKUProduct;
  *
  * @date 2016年3月19日 上午9:44:08
  */
-public class OrderSplit {
+public class OrderOperation {
 	
 	//商品订单分解为SKU订单：批量分解
 	public ArrayList<SKUOrder> goodsOrder2SKUOrder(ArrayList<GoodsOrder> goodsOrders){
