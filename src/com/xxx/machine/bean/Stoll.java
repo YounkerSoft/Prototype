@@ -25,7 +25,7 @@ public class Stoll extends Machine{
 	private ArrayList<ProductionOrder> taskQueue;		//任务队列
 	private ArrayList<ProductionOrder> comTaskQueue;	//已完成任务队列
 	private ArrayList<ProductionOrder> curTaskQueue;	//当前任务队列
-	private int estimatedIdleTime;						//完成当前任务队列中的任务预计所需时间
+	private int estimatedFinishTime;					//完成当前任务队列中的任务预计所需时间
 	private String history;				//历史||日志
 	
 
@@ -47,7 +47,7 @@ public class Stoll extends Machine{
 			ArrayList<SPUProduct> productList, String location, String factory,
 			int status, ArrayList<ProductionOrder> taskQueue,
 			ArrayList<ProductionOrder> comTaskQueue,
-			ArrayList<ProductionOrder> curTaskQueue, int estimatedIdleTime,
+			ArrayList<ProductionOrder> curTaskQueue, int estimatedFinishTime,
 			String history) {
 		super();
 		this.machineId = machineId;
@@ -59,7 +59,7 @@ public class Stoll extends Machine{
 		this.taskQueue = taskQueue;
 		this.comTaskQueue = comTaskQueue;
 		this.curTaskQueue = curTaskQueue;
-		this.estimatedIdleTime = estimatedIdleTime;
+		this.estimatedFinishTime = estimatedFinishTime;
 		this.history = history;
 	}
 
@@ -236,18 +236,18 @@ public class Stoll extends Machine{
 
 
 	/**
-	 * @return the estimatedIdleTime
+	 * @return the estimatedFinishTime
 	 */
-	public int getEstimatedIdleTime() {
-		return estimatedIdleTime;
+	public int getEstimatedFinishTime() {
+		return estimatedFinishTime;
 	}
 
 
 	/**
-	 * @param estimatedIdleTime the estimatedIdleTime to set
+	 * @param estimatedFinishTime the estimatedFinishTime to set
 	 */
-	public void setEstimatedIdleTime(int estimatedIdleTime) {
-		this.estimatedIdleTime = estimatedIdleTime;
+	public void setEstimatedFinishTime(int estimatedFinishTime) {
+		this.estimatedFinishTime = estimatedFinishTime;
 	}
 
 
