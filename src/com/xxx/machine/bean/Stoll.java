@@ -3,7 +3,6 @@ package com.xxx.machine.bean;
 import java.util.ArrayList;
 
 import com.xxx.order.bean.ProductionOrder;
-import com.xxx.product.bean.SPUProduct;
 
 /**
  * @author yuan
@@ -14,9 +13,10 @@ public class Stoll extends Machine{
 	
 	private long machineId;				//机器编号
 	
-	private String modelType;			//机器型号
-	
-	private ArrayList<SPUProduct> productList;			//所能生产产品列表
+//	private String brand;				//机器品牌
+//	private String modelType;			//机器型号
+//	
+//	private String productList;			//所能生产产品列表
 	
 	private String location;			//机器所处位置（是否处于一个市县乡）
 	private String factory;				//机器所在工厂
@@ -43,16 +43,14 @@ public class Stoll extends Machine{
 	 * @param estimatedIdleTime
 	 * @param history
 	 */
-	public Stoll(long machineId, String modelType,
-			ArrayList<SPUProduct> productList, String location, String factory,
+	public Stoll(long machineId, String brand, String modelType,
+			String productList, String location, String factory,
 			int status, ArrayList<ProductionOrder> taskQueue,
 			ArrayList<ProductionOrder> comTaskQueue,
 			ArrayList<ProductionOrder> curTaskQueue, int estimatedFinishTime,
 			String history) {
-		super();
+		super(brand, modelType, productList);
 		this.machineId = machineId;
-		this.modelType = modelType;
-		this.productList = productList;
 		this.location = location;
 		this.factory = factory;
 		this.status = status;
@@ -72,13 +70,11 @@ public class Stoll extends Machine{
 	 * @param factory
 	 * @param status
 	 */
-	public Stoll(long machineId, String modelType,
-			ArrayList<SPUProduct> productList, String location, String factory,
+	public Stoll(long machineId, String brand, String modelType,
+			String productList, String location, String factory,
 			int status) {
-		super();
+		super(brand, modelType, productList);
 		this.machineId = machineId;
-		this.modelType = modelType;
-		this.productList = productList;
 		this.location = location;
 		this.factory = factory;
 		this.status = status;
@@ -90,12 +86,9 @@ public class Stoll extends Machine{
 	 * @param modelType
 	 * @param productList
 	 */
-	public Stoll(long machineId, String modelType,
-			ArrayList<SPUProduct> productList) {
-		super();
+	public Stoll(long machineId, String brand, String modelType, String productList) {
+		super(brand, modelType, productList);
 		this.machineId = machineId;
-		this.modelType = modelType;
-		this.productList = productList;
 	}
 
 
@@ -104,38 +97,6 @@ public class Stoll extends Machine{
 	 */
 	public long getMachineId() {
 		return machineId;
-	}
-
-
-	/**
-	 * @return the modelType
-	 */
-	public String getModelType() {
-		return modelType;
-	}
-
-
-	/**
-	 * @param modelType the modelType to set
-	 */
-	public void setModelType(String modelType) {
-		this.modelType = modelType;
-	}
-
-
-	/**
-	 * @return the productList
-	 */
-	public ArrayList<SPUProduct> getProductList() {
-		return productList;
-	}
-
-
-	/**
-	 * @param productList the productList to set
-	 */
-	public void setProductList(ArrayList<SPUProduct> productList) {
-		this.productList = productList;
 	}
 
 
