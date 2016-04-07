@@ -16,7 +16,7 @@ public class SKUProduct extends Product{
 	private String[] skuParts;
 	private String[][] materials;
 	private double[][] materialsAmount;
-	private HashMap<String, Integer> requiredTime;
+	private HashMap<String, String> requiredTime;
 	
 
 
@@ -31,7 +31,7 @@ public class SKUProduct extends Product{
 	 */
 	public SKUProduct(long skuProductId, String sku, String spu,
 			String[] skuParts, String[][] materials,
-			double[][] materialsAmount, HashMap<String, Integer> requiredTime) {
+			double[][] materialsAmount, HashMap<String, String> requiredTime) {
 		super();
 		this.skuProductId = skuProductId;
 		this.sku = sku;
@@ -134,7 +134,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the requiredTime
 	 */
-	public HashMap<String, Integer> getRequiredTime() {
+	public HashMap<String, String> getRequiredTime() {
 		return requiredTime;
 	}
 
@@ -142,7 +142,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param requiredTime the requiredTime to set
 	 */
-	public void setRequiredTime(HashMap<String, Integer> requiredTime) {
+	public void setRequiredTime(HashMap<String, String> requiredTime) {
 		this.requiredTime = requiredTime;
 	}
 	

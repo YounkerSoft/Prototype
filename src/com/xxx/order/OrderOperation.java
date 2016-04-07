@@ -1,6 +1,7 @@
 package com.xxx.order;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.xxx.order.bean.GoodsOrder;
 import com.xxx.order.bean.ProductionOrder;
@@ -116,7 +117,9 @@ public class OrderOperation {
 				String[] skuParts = skuPro.getSkuParts();
 				String[][] materials = skuPro.getMaterials();
 				double[][] materialsAmount = skuPro.getMaterialsAmount();
-				int[] requiredTime = skuPro.getRequiredTime();
+				HashMap<String, String> requiredTime = skuPro.getRequiredTime();
+				//根据机器获取时间
+				String reqTime[] = requiredTime.get("").split(",");
 				
 				//====>>需要增加校验<<====
 				if(skuParts.length <= 0){
@@ -127,7 +130,7 @@ public class OrderOperation {
 				for(int i=0; i<skuParts.length; i++){
 					//====>>一般袖子有两个<<====
 					ProductionOrder proOrder = new ProductionOrder(i, skuOrder.getSku(), skuParts[i], skuOrder.getCount(),
-							0, materials[i], materialsAmount[i], requiredTime[i]*skuOrder.getCount());
+							0, materials[i], materialsAmount[i], Integer.valueOf(reqTime[i])*skuOrder.getCount());
 					
 					proOrders.add(proOrder);
 				}
