@@ -73,7 +73,7 @@ public class OrderOperation {
 	
 	
 	//SKU订单分解为生产订单：SKU包含前后袖子等 ：单个分解
-	public ArrayList<ProductionOrder> SKUOrder2ProductionOrder(ArrayList<SKUOrder> skuOrders){
+	public ArrayList<ProductionOrder> SKUOrder2ProductionOrder(ArrayList<SKUOrder> skuOrders) throws Exception{
 		
 		//参数检查
 		if(skuOrders==null||skuOrders.equals(null)||skuOrders.size()==0){
@@ -103,7 +103,7 @@ public class OrderOperation {
 	
 	
 	//SKU订单分解为生产订单：SKU包含前后袖子等 ：单个分解
-	public ArrayList<ProductionOrder> SKUOrder2ProductionOrder(SKUOrder skuOrder){
+	public ArrayList<ProductionOrder> SKUOrder2ProductionOrder(SKUOrder skuOrder) throws Exception{
 		
 		ArrayList<ProductionOrder> proOrders = new ArrayList<ProductionOrder>();
 		
