@@ -1,5 +1,7 @@
 package com.xxx.product.bean;
 
+import java.util.HashMap;
+
 /**
  * @author yuan
  *
@@ -10,26 +12,30 @@ public class SKUProduct extends Product{
 	private long skuProductId;
 	
 	private String sku;
+	private String spu;
 	private String[] skuParts;
 	private String[][] materials;
 	private double[][] materialsAmount;
-	private int[] requiredTime;
+	private HashMap<String, Integer> requiredTime;
 	
-	
+
+
 	/**
 	 * @param skuProductId
 	 * @param sku
+	 * @param spu
 	 * @param skuParts
 	 * @param materials
 	 * @param materialsAmount
 	 * @param requiredTime
 	 */
-	public SKUProduct(long skuProductId, String sku, String[] skuParts,
-			String[][] materials, double[][] materialsAmount,
-			int[] requiredTime) {
+	public SKUProduct(long skuProductId, String sku, String spu,
+			String[] skuParts, String[][] materials,
+			double[][] materialsAmount, HashMap<String, Integer> requiredTime) {
 		super();
 		this.skuProductId = skuProductId;
 		this.sku = sku;
+		this.spu = spu;
 		this.skuParts = skuParts;
 		this.materials = materials;
 		this.materialsAmount = materialsAmount;
@@ -58,6 +64,22 @@ public class SKUProduct extends Product{
 	 */
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+
+
+	/**
+	 * @return the spu
+	 */
+	public String getSpu() {
+		return spu;
+	}
+
+
+	/**
+	 * @param spu the spu to set
+	 */
+	public void setSpu(String spu) {
+		this.spu = spu;
 	}
 
 
@@ -112,7 +134,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the requiredTime
 	 */
-	public int[] getRequiredTime() {
+	public HashMap<String, Integer> getRequiredTime() {
 		return requiredTime;
 	}
 
@@ -120,7 +142,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param requiredTime the requiredTime to set
 	 */
-	public void setRequiredTime(int[] requiredTime) {
+	public void setRequiredTime(HashMap<String, Integer> requiredTime) {
 		this.requiredTime = requiredTime;
 	}
 	
