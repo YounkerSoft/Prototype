@@ -1,11 +1,15 @@
 package com.xxx.machine;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.xxx.util.Database;
 import com.xxx.machine.bean.Stoll;
 import com.xxx.order.bean.ProductionOrder;
-import com.xxx.product.bean.SPUProduct;
 
 /**
  * @author yuan
@@ -14,16 +18,38 @@ import com.xxx.product.bean.SPUProduct;
  */
 public class MachineOperation {
 	
+	//SQL connection
+	static Connection connection = null;
+	
+	
 	//根据机器型号获取所能生产产品列表：productList
-	public ArrayList<SPUProduct> getProductList(String modelType){
+	public ArrayList<String> getProductList(String modelType) throws SQLException{
 		
-		ArrayList<SPUProduct> productList = new ArrayList<SPUProduct>();
+		ArrayList<String> productList = new ArrayList<String>();
 		
 		/******************************************/
-		/***************机器库构建未实现****************/
+		/**********机器库构建实现(采用MySql)*************/
 		/******************************************/
-		//根据机器型号获取所能生产产品列表productList
-		//机器库可能是数据库，也可能是文本（待定）
+		
+		connection = Database.getConnection();
+		String sql = "select products from machine where model=" + modelType;
+		PreparedStatement ps = connection.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		String products = "";
+		
+		while(rs.next()){
+			products = rs.getString(1);
+	    }   
+		
+		String pros[] = products.split(";");
+		
+		for(int i=0; i<pros.length; i++){
+			productList.add(pros[i]);
+		}
+		
+		rs.close();
+		ps.close();	
 		
 		return productList;
 	}
