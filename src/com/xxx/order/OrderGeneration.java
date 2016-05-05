@@ -12,7 +12,7 @@ import com.xxx.order.bean.GoodsOrder;
 public class OrderGeneration {
 	
 	//生成商品订单列表
-	public static ArrayList<GoodsOrder> goodsOrderListGeneration(){
+	public ArrayList<GoodsOrder> goodsOrderListGeneration(){
 		
 		ArrayList<GoodsOrder> goodsOrderList = new ArrayList<GoodsOrder>();
 		
@@ -24,7 +24,7 @@ public class OrderGeneration {
 	
 	
 	//生成商品订单
-	public static GoodsOrder goodsOrderGeneration() {
+	public GoodsOrder goodsOrderGeneration() {
 		
 		long goodsId = 0;
 		String spu = "1";
