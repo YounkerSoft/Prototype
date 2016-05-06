@@ -119,9 +119,9 @@ public class OrderOperation {
 				String[][] materialsAmount = skuPro.getMaterialsAmount();
 				HashMap<String, String> requiredTime = skuPro.getRequiredTime();
 				
-				//======>>有问题<<======
-				//根据机器获取时间
-				String reqTime[] = requiredTime.get("stoll_1").split(",");
+				//======>>有问题：仅考虑了一个产品对应一台机器<<======
+				//根据机器获取时间		
+				String reqTime[] = requiredTime.get(requiredTime.keySet().toArray()[0]).split(",");
 				
 				//====>>需要增加校验<<====
 				if(skuParts.length <= 0){
