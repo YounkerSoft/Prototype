@@ -32,7 +32,10 @@ public class MachineOperation {
 		/******************************************/
 		
 		connection = Database.getConnection();
-		String sql = "select products from machine where model=" + modelType;
+		String sql = "select products from machine where model = '" + modelType + "'";
+		
+	//	System.out.println(sql);
+		
 		PreparedStatement ps = connection.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		
