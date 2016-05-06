@@ -16,7 +16,7 @@ public class ProductionOrder extends Order{
 	private int status;					//订单状态：0：未生产； 1：生产中； 2：生产完成； 3：不可生产
 	
 	private String[] material;			//生产所需原料：线的种类
-	private double[] materialAmount;	//原料使用量（单位：g）
+	private String[] materialAmount;	//原料使用量（单位：g）
 	
 	private int estimatedFinishTime;	//预计完成时间=单件所需时间*count
 
@@ -87,7 +87,7 @@ public class ProductionOrder extends Order{
 	 * @param estimatedFinishTime
 	 */
 	public ProductionOrder(long productionOrderId, String sku, String skuPart,
-			int count, int status, String[] material, double[] materialAmount,
+			int count, int status, String[] material, String[] materialAmount,
 			int estimatedFinishTime) {
 		super();
 		this.productionOrderId = productionOrderId;
@@ -192,7 +192,7 @@ public class ProductionOrder extends Order{
 	/**
 	 * @return the materialAmount
 	 */
-	public double[] getMaterialAmount() {
+	public String[] getMaterialAmount() {
 		return materialAmount;
 	}
 
@@ -200,7 +200,7 @@ public class ProductionOrder extends Order{
 	/**
 	 * @param materialAmount the materialAmount to set
 	 */
-	public void setMaterialAmount(double[] materialAmount) {
+	public void setMaterialAmount(String[] materialAmount) {
 		this.materialAmount = materialAmount;
 	}
 
