@@ -20,7 +20,8 @@ public class MachineGeneration {
 		ArrayList<Machine> machineList = new ArrayList<Machine>();
 		
 		//添加一台机器
-		machineList.add(machineGeneration());		
+		machineList.add(machineGeneration("stoll_1"));
+		machineList.add(machineGeneration("stoll_2"));	
 		
 		return machineList;
 		
@@ -29,13 +30,13 @@ public class MachineGeneration {
 	
 	//====>>单一机器<<====
 	//生成指定机器
-	public Machine machineGeneration() throws SQLException{
+	public Machine machineGeneration(String modelType) throws SQLException{
 		
 		MachineOperation machineOper = new MachineOperation();
 		
 		long machineId = 0;
 		String brand = "stoll";
-		String modelType = "stoll_1";	
+//		String modelType = "stoll_1";	
 		ArrayList<String> productList = machineOper.getProductList(modelType);
 		String location = "TX";
 		String factory = "RedAnt";
