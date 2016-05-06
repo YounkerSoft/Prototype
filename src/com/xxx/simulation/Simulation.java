@@ -2,6 +2,8 @@ package com.xxx.simulation;
 
 import java.util.ArrayList;
 
+import com.xxx.machine.MachineGeneration;
+import com.xxx.machine.bean.Machine;
 import com.xxx.order.OrderGeneration;
 import com.xxx.order.OrderOperation;
 import com.xxx.order.bean.GoodsOrder;
@@ -31,6 +33,8 @@ public class Simulation {
 		OrderGeneration orderGen = new OrderGeneration();		//商品订单生成实体
 		OrderOperation orderOper = new OrderOperation();		//订单操作实体
 		
+		MachineGeneration machineGen = new MachineGeneration();	//机器生成实体
+		
 		
 		//获取商品订单列表
 		ArrayList<GoodsOrder> goodsOrderList = new ArrayList<GoodsOrder>();
@@ -50,8 +54,18 @@ public class Simulation {
 		//测试是否分解完成
 		for(int i=0; i<proOrderList.size(); ++i){
 			System.out.println(proOrderList.get(i).toString());
-		}	
-
+		}
+		
+		
+		//获取机器列表
+		ArrayList<Machine> machineList = machineGen.machineListGeneration();
+		
+		//测试是否生成成功
+		for(int i=0; i<machineList.size(); ++i){
+			System.out.println(machineList.get(i).toString());
+		}
+		
+		
 	}
 
 }
