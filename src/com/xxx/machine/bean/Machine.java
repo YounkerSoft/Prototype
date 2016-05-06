@@ -1,5 +1,7 @@
 package com.xxx.machine.bean;
 
+import java.util.ArrayList;
+
 /**
  * @author yuan
  *
@@ -7,9 +9,9 @@ package com.xxx.machine.bean;
  */
 public class Machine {
 	
-	private String brand;				//机器品牌
-	private String modelType;			//机器型号
-	private String productList;			//机器所能生产的产品列表
+	private String brand;							//机器品牌
+	private String modelType;						//机器型号
+	private ArrayList<String> productList;			//机器所能生产的产品列表
 	
 	
 	/**
@@ -17,7 +19,7 @@ public class Machine {
 	 * @param modelType
 	 * @param productList
 	 */
-	public Machine(String brand, String modelType, String productList) {
+	public Machine(String brand, String modelType, ArrayList<String> productList) {
 		super();
 		this.brand = brand;
 		this.modelType = modelType;
@@ -60,7 +62,7 @@ public class Machine {
 	/**
 	 * @return the productList
 	 */
-	public String getProductList() {
+	public ArrayList<String> getProductList() {
 		return productList;
 	}
 
@@ -68,7 +70,7 @@ public class Machine {
 	/**
 	 * @param productList the productList to set
 	 */
-	public void setProductList(String productList) {
+	public void setProductList(ArrayList<String> productList) {
 		this.productList = productList;
 	}
 }
