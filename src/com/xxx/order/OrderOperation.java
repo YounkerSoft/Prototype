@@ -116,10 +116,12 @@ public class OrderOperation {
 			if(skuPro!=null && !skuPro.equals(null)){
 				String[] skuParts = skuPro.getSkuParts();
 				String[][] materials = skuPro.getMaterials();
-				double[][] materialsAmount = skuPro.getMaterialsAmount();
+				String[][] materialsAmount = skuPro.getMaterialsAmount();
 				HashMap<String, String> requiredTime = skuPro.getRequiredTime();
+				
+				//======>>有问题<<======
 				//根据机器获取时间
-				String reqTime[] = requiredTime.get("").split(",");
+				String reqTime[] = requiredTime.get("stoll_1").split(",");
 				
 				//====>>需要增加校验<<====
 				if(skuParts.length <= 0){
