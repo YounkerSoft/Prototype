@@ -4,14 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
-import java.util.List;
-
-
-
-
 
 import com.xxx.product.bean.SKUProduct;
-import com.xxx.util.DTOPopulator;
 import com.xxx.util.Database;
 
 /**
