@@ -15,7 +15,7 @@ public class SKUProduct extends Product{
 	private String spu;
 	private String[] skuParts;
 	private String[][] materials;
-	private double[][] materialsAmount;
+	private String[][] materialsAmount;
 	private HashMap<String, String> requiredTime;
 	
 
@@ -31,7 +31,7 @@ public class SKUProduct extends Product{
 	 */
 	public SKUProduct(long skuProductId, String sku, String spu,
 			String[] skuParts, String[][] materials,
-			double[][] materialsAmount, HashMap<String, String> requiredTime) {
+			String[][] materialsAmount, HashMap<String, String> requiredTime) {
 		super();
 		this.skuProductId = skuProductId;
 		this.sku = sku;
@@ -118,7 +118,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @return the materialsAmount
 	 */
-	public double[][] getMaterialsAmount() {
+	public String[][] getMaterialsAmount() {
 		return materialsAmount;
 	}
 
@@ -126,7 +126,7 @@ public class SKUProduct extends Product{
 	/**
 	 * @param materialsAmount the materialsAmount to set
 	 */
-	public void setMaterialsAmount(double[][] materialsAmount) {
+	public void setMaterialsAmount(String[][] materialsAmount) {
 		this.materialsAmount = materialsAmount;
 	}
 
