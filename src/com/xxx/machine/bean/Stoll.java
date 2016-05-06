@@ -44,7 +44,7 @@ public class Stoll extends Machine{
 	 * @param history
 	 */
 	public Stoll(long machineId, String brand, String modelType,
-			String productList, String location, String factory,
+			ArrayList<String> productList, String location, String factory,
 			int status, ArrayList<ProductionOrder> taskQueue,
 			ArrayList<ProductionOrder> comTaskQueue,
 			ArrayList<ProductionOrder> curTaskQueue, int estimatedFinishTime,
@@ -71,7 +71,7 @@ public class Stoll extends Machine{
 	 * @param status
 	 */
 	public Stoll(long machineId, String brand, String modelType,
-			String productList, String location, String factory,
+			ArrayList<String> productList, String location, String factory,
 			int status) {
 		super(brand, modelType, productList);
 		this.machineId = machineId;
@@ -86,7 +86,7 @@ public class Stoll extends Machine{
 	 * @param modelType
 	 * @param productList
 	 */
-	public Stoll(long machineId, String brand, String modelType, String productList) {
+	public Stoll(long machineId, String brand, String modelType, ArrayList<String> productList) {
 		super(brand, modelType, productList);
 		this.machineId = machineId;
 	}
