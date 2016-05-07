@@ -35,6 +35,8 @@ public class Simulation {
 		
 		MachineGeneration machineGen = new MachineGeneration();	//机器生成实体
 		
+		OrderAllocation orderAlloc = new OrderAllocation();		//订单分配实体
+		
 		
 		//获取商品订单列表
 		ArrayList<GoodsOrder> goodsOrderList = new ArrayList<GoodsOrder>();
@@ -66,6 +68,16 @@ public class Simulation {
 		}
 		
 		
+		//订单分配
+		orderAlloc.orderAllocation(machineList, proOrderList);
+		
+		
+		//测试是否生成成功
+		for(int i=0; i<machineList.size(); ++i){
+			System.out.println(machineList.get(i).toString());
+		}
+		
+	
 	}
 
 }
